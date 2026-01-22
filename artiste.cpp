@@ -1,9 +1,13 @@
 #include "artiste.h"
+#include "date.h"
 #include <iostream>
 
 
 Artiste::Artiste(const std::string& nom, const std::string& prenom,const std::string& Specialite, const Date& naissance, const Date& deces):
     nom_(nom), prenom_(prenom), specialite_(Specialite), naissance_(naissance), deces_(deces){}
+
+//Artiste::Artiste():prenom_("Inconnu"),nom_("NULL"),specialite_("NULL"), naissance_(Date (0,0,0)), deces_(Date (0,0,0)){}
+
 
 std::string Artiste::getPrenom() const{
     return prenom_;

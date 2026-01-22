@@ -15,6 +15,7 @@ class Date {
     public :
         //Constructeurs et destructeur
         Date(int year, int month, int day);
+        Date(int year);
 
         //~Date();
 
@@ -28,6 +29,7 @@ class Date {
 
         void updateDate(int year, int month, int day);
         std::string afficher_date_str() const;
+        std::string afficher_year_str() const;
         void afficher_date_void() const;
         
 };

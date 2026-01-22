@@ -17,6 +17,13 @@ Date::Date(int year, int month, int day) :
         }
 }
 
+Date::Date(int year):
+    year_(year){
+        if (year > 2026){
+            throw std::invalid_argument("Date invalide : "+ std::to_string(year) + " n'est pas possible !");
+        }
+    }
+
 /*
 Date::~Date() {
     std::cout << "Destruction de la date : " << day_ << "/" << month_ << "/" << year_ << std::endl;
@@ -69,6 +76,10 @@ int Date::DayOfYear() const{
 
 std::string Date::afficher_date_str() const{
     return (std::to_string(year_) + "|" + std::to_string(month_) + "|" + std::to_string(day_));
+}
+
+std::string Date::afficher_year_str() const{
+    return (std::to_string(year_));
 }
 
 void Date::afficher_date_void() const{
