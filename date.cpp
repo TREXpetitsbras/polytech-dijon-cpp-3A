@@ -2,7 +2,6 @@
 #include <iostream>
 
 bool Date::isDateValid(int year, int month, int day){
-    if (year < 2026) return false;
     if ((day < 1) || (day > 31)) return false;
     if ((month < 1) || (month > 12)) return false;
     if ((month == 2) && (day > 28)) return false;
