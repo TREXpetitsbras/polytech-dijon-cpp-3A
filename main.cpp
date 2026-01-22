@@ -7,6 +7,7 @@
 #include "salle.h"
 #include "exposition.h"
 
+
 int main(){
 
     /* Verification de la classe date
@@ -72,7 +73,21 @@ int main(){
     */
     
     
-/*    Artiste Monet("Monet", "Claude", "Peintre", Date(1840,11,14), Date(1926,12,5));
+    /* Verification des salles et des expositions
+    Salle salle1(1, "Salle des peintures");
+    Salle salle2(2, "Salle des sculptures");
+    Salle salle3(3, "Salle des Livres");
+
+    Exposition expo1(1, Date(2026,10,31), Date(2027,10,31));
+
+    expo1.addSalle(salle1);
+    expo1.addSalle(salle2);
+    expo1.addSalle(salle3);
+
+    expo1.afficher_expo();    
+    */
+
+    Artiste Monet("Monet", "Claude", "Peintre", Date(1840,11,14), Date(1926,12,5));
     Artiste VanGogh("Van Vogh", "Vincent", "Peintre", Date(1853,3,30), Date(1890,7,29));
     Artiste MichelAnge("Ange", "Michel", "Sculpteur", Date(1475,3,6), Date(1564,2,18));
     Artiste VictorHugo("Hugo", "Victor", "Ecrivain", Date(1802,2,26), Date(1885,5,22));
@@ -102,15 +117,7 @@ int main(){
     Louvre.addOeuvre(MichelAnge, david);
     Louvre.addOeuvre(VictorHugo, les_contemplations);
     Louvre.addOeuvre(VictorHugo, la_coccinelle);
-    
-    //Louvre.afficher_musee();
-    //Louvre.afficher_artistes();
-    //Louvre.afficher_oeuvres();
-    
-    std::cout << "Exposition temporaire" << std::endl;
-*/
-    
-    // Verification des salles et des expositions
+
     Salle salle1(1, "Salle des peintures");
     Salle salle2(2, "Salle des sculptures");
     Salle salle3(3, "Salle des Livres");
@@ -121,7 +128,46 @@ int main(){
     expo1.addSalle(salle2);
     expo1.addSalle(salle3);
 
-    expo1.afficher_expo();    
+    //expo1.afficher_expo();  
+    
+    //Louvre.afficher_musee();
+    //Louvre.afficher_artistes();
+    //Louvre.afficher_oeuvres();
 
+
+    int  choix = 1;
+
+    while(choix != 0) {
+        std::cout << "\n================ MENU ===============" << std::endl;
+        std::cout << "1. Afficher tout le musee" << std::endl;
+        std::cout << "2. Lister les expositions" << std::endl;
+        std::cout << "3. Lister les artistes" << std::endl;
+        std::cout << "4. Lister les oeuvres" << std::endl;
+        std::cout << "0. Quitter" << std::endl;
+        std::cout << "Votre choix : ";
+
+        std::cin >> choix;
+        std::cout << std::endl;
+
+        if (choix < 0 || choix > 4){
+            std::cout << "Choix invalide, " + std::to_string(choix) + " n'est pas compris entre 0 et 4" << std::endl;
+        }
+        else if (choix == 0){
+            break;
+        }
+        else if (choix == 1){
+            Louvre.afficher_musee();
+        }
+        else if (choix == 2){
+            expo1.afficher_expo();
+        }
+        else if (choix == 3){
+            Louvre.afficher_artistes();
+        }
+        else if (choix == 4){
+            Louvre.afficher_oeuvres();
+        }
+        
+    }
     return 0;
 };
