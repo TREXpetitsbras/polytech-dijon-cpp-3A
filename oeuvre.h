@@ -8,7 +8,7 @@ class Oeuvre{
     private :
 
         Artiste artiste_;
-        std::string artiste_std;
+        //std::string artiste_std;
         std::string type_;
         std::string oeuvre_;
         Date date_;
@@ -20,7 +20,8 @@ class Oeuvre{
 
         std::string getOeuvre() const;
         std::string getArtiste() const;
-        std::string getDate() const;
+        std::string getType() const;
+        std::string getYear() const;
         void affichage_oeuvre() const;
 
 };

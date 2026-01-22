@@ -3,6 +3,7 @@
 #include "date.h"
 #include "artiste.h"
 #include "oeuvre.h"
+#include "musee.h"
 
 
 int main(){
@@ -28,7 +29,7 @@ int main(){
     Monet.affichage_artiste();
     */
     
-    //Verification de la classe Oeuvre
+    // Verification de la classe Oeuvre
     /* oeuvre avec artiste
     Artiste Monet("Monet", "Claude", "Peintre", Date (1840,11,14), Date (1926,12,5));
     
@@ -42,7 +43,33 @@ int main(){
 
     std::cout << Inconnu.getPrenom() << std::endl;
     */
-        
+    
+    /* Verification de la classe Musee
+    Artiste Monet("Monet", "Claude", "Peintre", Date(1840,11,14), Date(1926,12,5));
+    Artiste VanGogh("Van Vogh", "Vincent", "Peintre", Date(1853,3,30), Date(1890,7,29));
 
+    Oeuvre le_jardin(Monet, "peinture", "Le jardin de l'artiste a Giverny", Date(1900));
+    Oeuvre la_promenade(Monet, "peinture", "La promenade ", Date(1875));
+    Oeuvre les_nympheas(Monet, "peinture", "Les nympheas", Date(1918));
+    Oeuvre la_nuit_etoile(VanGogh, "peinture", "La nuit etoile", Date(1889));
+    Oeuvre autoportrait(VanGogh,"peinture", "Autoportrait", Date(1889));
+
+    Musee Louvre("Le Louvre");
+
+    Louvre.addArtiste(Monet);
+    Louvre.addArtiste(VanGogh);
+    
+    Louvre.addOeuvre(Monet, le_jardin);
+    Louvre.addOeuvre(Monet, la_promenade);
+    Louvre.addOeuvre(Monet, les_nympheas);
+    Louvre.addOeuvre(VanGogh, la_nuit_etoile);
+    Louvre.addOeuvre(VanGogh, autoportrait);
+    
+    //Louvre.afficher_musee();
+    //Louvre.afficher_artistes();
+    //Louvre.afficher_oeuvres();
+    */
+    
+    
     return 0;
 };

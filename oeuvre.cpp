@@ -16,9 +16,15 @@ std::string Oeuvre::getOeuvre() const{
 std::string Oeuvre::getArtiste() const{
     return artiste_.getPrenom() + " " + artiste_.getNom(); 
 }
+std::string Oeuvre::getType() const{
+    return type_;
+}
+std::string Oeuvre::getYear() const{
+    return (date_.afficher_year_str());
+} 
 
 void Oeuvre::affichage_oeuvre() const{
-    std::cout << "|     " << artiste_.getPrenom() + " " + artiste_.getNom() << std::endl;
     std::cout << "|     " << type_ << " : " << oeuvre_ << std::endl;
+    std::cout << "|     " << artiste_.getPrenom() + " " + artiste_.getNom() << std::endl;
     std::cout << "|     " << date_.afficher_year_str() << std::endl;
 }
