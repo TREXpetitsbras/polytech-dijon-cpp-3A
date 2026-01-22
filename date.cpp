@@ -19,9 +19,6 @@ Date::Date(int year, int month, int day) :
 
 Date::Date(int year):
     year_(year){
-        if (year > 2026){
-            throw std::invalid_argument("Date invalide : "+ std::to_string(year) + " n'est pas possible !");
-        }
     }
 
 /*

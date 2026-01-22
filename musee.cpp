@@ -32,13 +32,15 @@ void Musee::addArtiste(Artiste artiste){
 
 
 void Musee::afficher_musee(){
+    std::cout << "--------------------------------------------" << std::endl;
     for (const auto& artiste : artistes){
-        std::cout << "--------- " << (artiste.getPrenom() + " " + artiste.getNom()) << " ---------" << std::endl;
+        std::cout << artiste.getPrenom() << " " << artiste.getNom() << std::endl;
         for (const auto& oeuvre : oeuvres){
             if (oeuvre.getArtiste() == (artiste.getPrenom() + " " + artiste.getNom())){
             std::cout << "--> " << oeuvre.getType() << " : "<< oeuvre.getOeuvre() << " : " << oeuvre.getYear() << std::endl;
             }
         }
+        std::cout << "--------------------------------------------" << std::endl;
     }
 }
 void Musee::afficher_artistes(){
